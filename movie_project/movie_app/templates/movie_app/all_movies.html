@@ -1,0 +1,12 @@
+{%extends 'movie_app/base.html'%}
+{%block title%} Все фильмы {%endblock%}
+
+{%block content%}
+<ul>
+
+    {%for movie in movies%}
+    <li><a href=" {{movie.get_info}} ">{{movie}}, {{movie.budget}}</a></li>
+    {%endfor%}
+</ul>
+<h1> Всего фильмов: {{total}}</h1>
+{%endblock%}
