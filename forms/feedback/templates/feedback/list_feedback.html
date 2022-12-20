@@ -1,0 +1,9 @@
+{%extends 'feedback/base.html'%}
+{%block title%}список всех отзывов{%endblock%}
+{%block content%}
+ <ol>
+    {%for feed in all_feed%}
+        <li>id: {{feed.pk}} {{feed.name}} {{feed.surname}}:  {{feed.feedback}}</li>
+     {%endfor%}
+ </ol>
+{%endblock%}

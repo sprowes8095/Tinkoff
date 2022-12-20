@@ -1,0 +1,25 @@
+<!--примеры html на сайте 'w3schools.com'-->
+{%extends 'feedback/base.html'%}
+
+
+
+{%block title%}Страница отзывов{%endblock%}
+
+
+{%block content%}
+<h2>Оставьте отзыв</h2>
+    <form  method="post">
+        {% csrf_token %}
+<!--        token при использовании метода post для защиты в сети от атак-->
+            {% for field in form %}
+                <div class="form-style {% if field.errors %} errors {% endif %}">
+                    {{ field.errors }}
+                    {{ field.label_tag }}<br>
+                    {{ field }}
+
+                </div>
+            {% endfor %}
+
+        <button>Отправить</button>
+    </form>
+{%endblock%}
